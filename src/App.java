@@ -6,7 +6,7 @@ public class App {
     public void start() {
         String userName = getUserName();
         printGreeting(userName);
-        do{
+        do{                                        // loop logic learned from https://www.geeksforgeeks.org/loops-in-java/
             int madlibChoice = chooseMadlib();
             if (madlibChoice == 1){
                 printInstructions();
@@ -49,7 +49,7 @@ public class App {
         Scanner getRestart = new Scanner(System.in);
         System.out.println();          
         
-        //  The following code was copied from chat gpt with some minor alterations 
+        //  The following code was copied from chat gpt with some minor alterations
 
         System.out.println("Want to play again? ");         
         System.out.println("Enter \"yes\" or \"no\":");
@@ -189,7 +189,7 @@ public class App {
         System.out.println("Here is your very own story!");
         System.out.println();
 
-        System.out.println("Today I went to the zoo. I saw a/an " + adjective1ML + " " + noun1ML);
+        System.out.println("Today I went to the park. I saw a/an " + adjective1ML + " " + noun1ML);
         System.out.println("jumping up and down in its tree. He " + verbPast1ML + " " + adverb1ML);
         System.out.println("through the large tunnel that led to its " + adjective2ML + " " + noun2ML + "."); 
         System.out.println("I got some peanuts and passed them through the cage to a gigantic gray " + noun3ML);
@@ -197,7 +197,7 @@ public class App {
         System.out.println("scoop of ice cream. It filled my stomach. Afterwards I had to " + verbML + " " + adverb2ML);
         System.out.println("to catch our bus. When I got home I " + verbPast2ML);
         System.out.println("my mom for a " + adjective4ML);
-        System.out.println("day at the zoo.");
+        System.out.println("day at the park.");
     }
     
     public void endMessage(){
