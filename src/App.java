@@ -14,8 +14,8 @@ public class App {
             }
             else if (madlibChoice == 2){
                 printInstructions();
-                doMadlib2();
-            }
+                doMadlib2();                        // I tried submiting it yesterday but had some issues with the commit part. 
+            }                                       // thanks to joão i was able to fix it. sorry for the late submission.
             else {
                 errorMessage();
             }
