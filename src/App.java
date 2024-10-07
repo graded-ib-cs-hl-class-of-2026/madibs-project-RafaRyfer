@@ -2,6 +2,24 @@ import java.util.Scanner;
 
 public class App {
     
+    /** This is method is what actually calls on and executes 
+     * all the other methods outlined in this program.
+     * Firstly, it calls on the "getUserName" method and saves
+     * the user input into the variable "UserName".
+     * It then calls on the "printGreeting" method to print
+     * the greeting message using the "userName" variable
+     * from earlier. The program then initiates a "do" loop.
+     * A "do" loop is used as it executes the code in the loop first
+     * and then checks for the loop statement, which is exactly
+     * what we need since the used is used to restart the program.
+     * The first think done in the loop is to call the "chooseMadlib"
+     * variable and saves it to an int. That is followed by an if statement, 
+     * depending on the value of the int value created from the "chooseMadlib"
+     * method, it either calls on the "doMadlib1" or the "doMadlib2" method.
+     * It then calls on the "restart" method to check if the user wants to play again,
+     * if true, than the loop repeats, if not then the program prints out the
+     * end message and ends.
+    */
 
     public void start() {
         String userName = getUserName();
@@ -22,7 +40,12 @@ public class App {
         } while(restart() == true); 
         endMessage();   
     }
-    
+
+    /**This method prompts 
+     * the user to enter their name, 
+     * waits until they enter their name, 
+     * then returns their name to be saved. 
+     * */
 
     public String getUserName (){
         Scanner getName = new Scanner(System.in);
@@ -30,13 +53,25 @@ public class App {
         return getName.nextLine();
     }
 
+    /** This method accepts the user's name as an argument, 
+     * then print a custom greeting for that user.
+     * */
+
     public void printGreeting(String userName){
         System.out.println("Hello " + userName + ", welcome to Madlibs!");
     }
 
+    /** This method prints an error message if the user
+     * inputs a number other than "1" or "2" when choosing a madlib.
+     */
+
     public void errorMessage(){
         System.out.println ("This madlib does not exist :(");
     }
+
+    /** This method prompts the user to choose a madlib
+     * and saves the user's input as an integer variable.
+     */
 
     public int chooseMadlib(){
         Scanner getChoice = new Scanner (System.in);
@@ -44,6 +79,13 @@ public class App {
         System.out.println("Enter 1 or 2 to choose a Madlib:");
         return getChoice.nextInt();    
     }
+
+    /** This method asks the user if they want to play again.
+     * It saves the user's input as a string and uses ".equals" boolean
+     * to compare the user's string to a specified object.
+     * Depending on the user's input it either restarts the loop, having the user
+     * replay the game, or ends the program.
+     */
 
     public boolean restart(){
         Scanner getRestart = new Scanner(System.in);
@@ -67,6 +109,8 @@ public class App {
         }
     }
 
+    /** This method prints the instructions for the game to the user. */
+
     public void printInstructions() {
         System.out.println();
         System.out.println("Instructions:");
@@ -75,6 +119,13 @@ public class App {
         System.out.println("All you have to do is answer as prompted!");
         System.out.println();
     }
+
+    /** This method actually does the madlib (In this case madlib choice #1).
+     * It creates a scanner and prompts the user for all the missing words.
+     * It saves the users inputs as string variables and 
+     * prints the final madlib, using the variables to fill in the blanks 
+     * in the strings that make up the story.
+     */
 
     public void doMadlib1(){
         Scanner getMLInfo = new Scanner(System.in);
@@ -146,6 +197,13 @@ public class App {
         System.out.println("and we promised to come back again in " + numberML + " weeks!");
     }
 
+    /** This method actually does the madlib (In this case madlib choice #2).
+     * It creates a scanner and prompts the user for all the missing words.
+     * It saves the users inputs as string variables and 
+     * prints the final madlib, using the variables to fill in the blanks 
+     * in the strings that make up the story.
+     */
+
     public void doMadlib2(){
         Scanner getMLInfo = new Scanner(System.in);
 
@@ -200,6 +258,8 @@ public class App {
         System.out.println("day at the park.");
     }
     
+    /** This method prints out the end message. */
+
     public void endMessage(){
         System.out.println();
         System.out.println("Thanks for playing!");
